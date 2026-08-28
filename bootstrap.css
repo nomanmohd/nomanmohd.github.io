@@ -676,7 +676,7 @@ cite {
 }
 
 .muted {
-  color: #999999;
+  color: #555555;
 }
 
 a.muted:hover,
@@ -6115,10 +6115,10 @@ a.badge:focus {
   padding: 60px;
   margin-bottom: 30px;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 30px;
-  color: inherit;
-  background-color: #eeeeee;
+  color: #1a1a1a;
+  background-color: #f5f5f5;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -6158,4 +6158,140 @@ a.badge:focus {
 
 .affix {
   position: fixed;
+}
+
+/* --- New site header: centered nav on top, photo + name/affil row below (styled after cs.toronto.edu/~bianca) --- */
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+.site-header .site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.site-header .site-nav a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 4px 14px 7px;
+  border-bottom: 3px solid transparent;
+  position: relative;
+}
+.site-header .site-nav a:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: #e6e6e6;
+  margin-left: 14px;
+  vertical-align: middle;
+}
+.site-header .site-nav a:hover {
+  color: #004c9b;
+}
+.site-header .site-nav a.active {
+  color: #004c9b;
+  font-weight: 600;
+  border-bottom-color: #ffdc00;
+}
+
+.site-header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: 100%;
+  text-align: left;
+}
+.site-header-person {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  text-align: left;
+}
+.site-header .site-logo {
+  flex: none;
+  height: 96px;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .site-header-main {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.site-header .site-photo {
+  display: block;
+  flex: none;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: 0 0 0 4px #f5f5f5;
+}
+.site-header-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.site-header .site-name {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+.site-header .site-affil {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .site-header-main {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+
+.contact-icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+}
+.contact-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 14px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.contact-icon:hover {
+  color: #004c9b;
+  border-color: #004c9b;
+}
+
+.site-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
 }
